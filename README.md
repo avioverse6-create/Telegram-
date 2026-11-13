@@ -44,3 +44,20 @@ You will require Android Studio 2025.1.4, Android NDK 27.2.12479018 and Android 
 ### Localization
 
 We moved all translations to https://translations.telegram.org/en/android/. Please use it.
+
+
+## Avioverse starter work
+
+The `avioverse-starter` branch is the working branch for the unofficial Android client customization.
+
+Current first milestone:
+- Keep the Telegram Android codebase as the client foundation.
+- Plan a three-item bottom navigation: Chats, Profile, Settings.
+- Keep gifts and Stars clearly in demo mode until a legitimate payment/account integration exists. A local demo balance is not real Telegram Stars and cannot be spent or transferred.
+- No independent messaging backend exists yet. Until one is designed and deployed, this source remains a Telegram-network client foundation; it is not a standalone messaging network.
+
+### Build
+
+Use GitHub Actions → Android debug APK → Run workflow, or push a commit to `avioverse-starter`. The workflow checks out submodules and attempts the `afatDebug` APK build. The first build may take a long time because Telegram includes substantial native code and submodules.
+
+Before distributing a build, configure your own Telegram API credentials, app identity, signing key and any required Firebase configuration. Do not distribute the repository's sample credentials or signing setup.
