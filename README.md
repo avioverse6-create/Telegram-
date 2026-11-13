@@ -61,3 +61,14 @@ Current first milestone:
 Use GitHub Actions → Android debug APK → Run workflow, or push a commit to `avioverse-starter`. The workflow checks out submodules and attempts the `afatDebug` APK build. The first build may take a long time because Telegram includes substantial native code and submodules.
 
 Before distributing a build, configure your own Telegram API credentials, app identity, signing key and any required Firebase configuration. Do not distribute the repository's sample credentials or signing setup.
+
+
+### Existing Telegram Stars and gifts
+
+The source tree already contains Telegram's native Stars and gift flows (including the Stars intro/balance UI and the Send a Gift entry in Settings). These remain connected to Telegram's account and server-side eligibility/purchase rules. Avioverse will not fabricate spendable Stars or claim that a local unlimited counter is real currency. A separate unlimited demo counter can be added later, clearly marked as non-transferable and non-purchasable.
+
+### First UI milestone
+
+- Main navigation is reduced to Chats, Settings and Profile.
+- The Settings and Profile destinations reuse Telegram's existing functional screens and account data.
+- The Settings screen already contains native Telegram Stars and Send a Gift entries where Telegram makes them available.
