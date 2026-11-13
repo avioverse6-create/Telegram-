@@ -48,27 +48,22 @@ We moved all translations to https://translations.telegram.org/en/android/. Plea
 
 ## Avioverse starter work
 
-The `avioverse-starter` branch is the working branch for the unofficial Android client customization.
+The `avioverse-starter` branch is the working branch for the unofficial Avioverse Android prototype.
 
-Current first milestone:
-- Keep the Telegram Android codebase as the client foundation.
-- Plan a three-item bottom navigation: Chats, Profile, Settings.
-- Keep gifts and Stars clearly in demo mode until a legitimate payment/account integration exists. A local demo balance is not real Telegram Stars and cannot be spent or transferred.
-- No independent messaging backend exists yet. Until one is designed and deployed, this source remains a Telegram-network client foundation; it is not a standalone messaging network.
+### Current offline-first milestone
+
+- The launcher opens `AvioverseHomeActivity` directly. The first screen does not ask for a phone number, SMS code, Telegram login or Avioverse registration.
+- The first prototype has three tabs: Chats, Settings and Profile.
+- The profile name is stored locally on the device.
+- Chats are a placeholder: there is no messaging backend and messages cannot yet be sent to other people.
+- Avioverse demo Stars show an unlimited balance and Avioverse gifts (bear, rose, crystal and rocket) are local UI examples only. They are not Telegram Stars, payment instruments, transferable assets or real gifts.
+- The offline home screen does not use a Telegram account. The original Telegram client code remains in the source tree for reference and must not be presented as the Avioverse messaging service.
+- No independent messaging server exists yet. Real multi-user chat requires a separately designed backend and security model.
 
 ### Build
 
-Use GitHub Actions → Android debug APK → Run workflow, or push a commit to `avioverse-starter`. The workflow checks out submodules and attempts the `afatDebug` APK build. The first build may take a long time because Telegram includes substantial native code and submodules.
+GitHub Actions builds the debug APK on pushes to `avioverse-starter`. Open the Actions tab and download the `avioverse-debug-apk` artifact after a successful run. The first build may take a long time because Telegram includes substantial native code and submodules.
 
-Before distributing a build, configure your own Telegram API credentials, app identity, signing key and any required Firebase configuration. Do not distribute the repository's sample credentials or signing setup.
+### Licensing and identity
 
-
-### Existing Telegram Stars and gifts
-
-The source tree already contains Telegram's native Stars and gift flows (including the Stars intro/balance UI and the Send a Gift entry in Settings). These remain connected to Telegram's account and server-side eligibility/purchase rules. Avioverse will not fabricate spendable Stars or claim that a local unlimited counter is real currency. A separate unlimited demo counter can be added later, clearly marked as non-transferable and non-purchasable.
-
-### First UI milestone
-
-- Main navigation is reduced to Chats, Settings and Profile.
-- The Settings and Profile destinations reuse Telegram's existing functional screens and account data.
-- The Settings screen already contains native Telegram Stars and Send a Gift entries where Telegram makes them available.
+This is an unofficial Avioverse prototype based on the Telegram Android source tree. Preserve the applicable GPL-2.0 licensing and source-distribution obligations when distributing modified builds. Do not imply that Avioverse is an official Telegram app or that its demo Stars/gifts are Telegram products.
