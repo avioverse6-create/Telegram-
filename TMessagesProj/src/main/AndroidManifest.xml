@@ -209,12 +209,7 @@
             android:name="org.telegram.ui.AvioverseHomeActivity"
             android:label="Avioverse"
             android:exported="true"
-            android:theme="@style/Theme.TMessages">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:theme="@style/Theme.TMessages" />
 
         <activity
             android:name="org.telegram.ui.LaunchActivity"
@@ -308,7 +303,7 @@
         </activity>
         <activity-alias
             android:name="org.telegram.ui.CallsActivity"
-            android:targetActivity="org.telegram.ui.AvioverseHomeActivity"
+            android:targetActivity="org.telegram.ui.LaunchActivity"
             android:permission="android.permission.CALL_PHONE"
             android:exported="true">
             <intent-filter>
